@@ -1,0 +1,7 @@
+/Users/joe/Documents/projects/c++_projects/student_marks_ica/out/build/CMakeFiles/ica.dir
+/Users/joe/Documents/projects/c++_projects/student_marks_ica/out/build/CMakeFiles/edit_cache.dir
+/Users/joe/Documents/projects/c++_projects/student_marks_ica/out/build/CMakeFiles/rebuild_cache.dir
+/Users/joe/Documents/projects/c++_projects/student_marks_ica/out/build/include/CMakeFiles/mmstock.dir
+/Users/joe/Documents/projects/c++_projects/student_marks_ica/out/build/include/CMakeFiles/bbstock.dir
+/Users/joe/Documents/projects/c++_projects/student_marks_ica/out/build/include/CMakeFiles/edit_cache.dir
+/Users/joe/Documents/projects/c++_projects/student_marks_ica/out/build/include/CMakeFiles/rebuild_cache.dir
