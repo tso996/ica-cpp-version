@@ -2,15 +2,15 @@
 //1 - make class for each of the 2 stock categories from the dataset
 //2 - make a class to read information from the dataset 
 //3 - make it so that we can modify a new csv file with the data through the terminal
-//4 - 
 #include "include/mmstock.h"//'' and "" are different
-
+using namespace std;
 
 
 
 int main(){
 
     std::cout<<"its loaded!!\n";
+ 
     return 0;
 }
 

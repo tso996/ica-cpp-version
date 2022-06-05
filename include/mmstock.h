@@ -22,6 +22,5 @@ class MMStock
         int getUnitPricePounds();
         int getUnitPricePence();
         int getQuantityInStock();
-        static void readMMStockCSV();
 
 };

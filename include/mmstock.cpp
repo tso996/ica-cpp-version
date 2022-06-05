@@ -34,7 +34,3 @@ int MMStock::getUnitPricePence(){
 int MMStock::getQuantityInStock(){
     return quantityInStock;
 }
-
-void MMStock::readMMStockCSV(){
-    std::cout<<"reading csv file...\n";
-}
