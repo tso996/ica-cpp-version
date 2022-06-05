@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libmmstock.a CMakeFiles/mmstock.dir/mmstock.cpp.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libmmstock.a
