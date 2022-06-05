@@ -36,3 +36,5 @@
 !/out/build/.gitkeep
 
 .DS_Store
+
+.vscode
