@@ -3,13 +3,38 @@
 //2 - make a class to read information from the dataset 
 //3 - make it so that we can modify a new csv file with the data through the terminal
 #include "include/mmstock.h"//'' and "" are different
+#include "include/bbstock.h"
+#include <vector>
+
 using namespace std;
 
+namespace frw{
 
+vector<BBStock> bbStockBuilder(){
+
+}
+
+vector<MMStock> mmStockBuilder(){
+
+
+}
+//read and return a list of objects from the csv file.
+auto readFromCSV(/*get a function pointer here*/){
+    //read the data into a list
+
+    
+    //use the functionpointer to call one of the stockbuilder functions
+
+    return 0;
+}
+
+}
 
 int main(){
 
+    auto csv = frw::readFromCSV();
     std::cout<<"its loaded!!\n";
+  
  
     return 0;
 }
