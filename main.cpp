@@ -29,8 +29,14 @@ list<BBStock> bbStockBuilder(){
             std::string token;
             while(std::getline(ss, token, ',')) {
                 //std::cout << token << endl;
-                values[i] = token;
-                i++;
+                if(i<5){
+                    values[i] = token;
+                    i++;
+                }
+                else
+                {
+                    cout<<"array out of bounds";
+                }
             }
             //cout<<values[0]<<"\n";
             BBStock *item = new BBStock(values[0],values[1],values[2],stoi(values[3]),stoi(values[4]));
