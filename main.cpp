@@ -10,7 +10,7 @@
 
 int main(){
 
-    std::cout<<"its loaded!\n";
+    std::cout<<"its loaded!!\n";
     return 0;
 }
 
