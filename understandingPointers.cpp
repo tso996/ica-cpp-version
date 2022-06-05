@@ -19,8 +19,8 @@ namespace frw{
 list<BBStock> bbStockBuilder(){
     
     std::ifstream file("data/barkers_boutique_stock_list_example.csv");
-    list<BBStock> bbstockItems;
-    if (file.is_open()) {       
+    
+    if (file.is_open()) {
         std::string line;
         while (std::getline(file, line)) {
             string values[5];
@@ -32,15 +32,12 @@ list<BBStock> bbStockBuilder(){
                 values[i] = token;
                 i++;
             }
-            //cout<<values[0]<<"\n";
+            cout<<values[0]<<"\n";
             BBStock *item = new BBStock(values[0],values[1],values[2],stoi(values[3]),stoi(values[4]));
-            bbstockItems.push_back(*item);
-            delete item;
-            item = nullptr;
+
         }
-        file.close();
-    }
-    return bbstockItems;
+    file.close();
+}
 
 }
 
@@ -54,22 +51,31 @@ list<MMStock> mmStockBuilder(){
 int main(){
 
     //get mmstock as a list
-    list<BBStock> bbstockList = frw::bbStockBuilder();
-    list<BBStock>::iterator it;
-    for(it=bbstockList.begin();it!=bbstockList.end();++it){
-        cout<<it->getProductCode()<<"\n";
-    }
-
-    for(auto& item: bbstockList){
-        cout<<item.getProductDescription()<<"\n";
-    }
+    //auto bbstockList = frw::bbStockBuilder();
 
     //get bbstock as a list
     //auto mmstockList = frw::mmStockBuilder();
     std::cout<<"its loaded!!\n";
 
    // BBStock *item = new BBStock("1","2","3",4, 5);
- 
+    float x;
+    {
+        float *stuff = new float();
+        *stuff = 5.1;
+        x = *stuff;
+        cout<<"*stuff before delete: "<<*stuff<<"\n";
+        cout<<"stuff before delete: "<<stuff<<"\n";
+
+        delete stuff;
+        cout<<"*stuff after delete: "<<*stuff<<"\n";
+        cout<<"stuff after delete: "<<stuff<<"\n";
+        stuff = nullptr;
+        cout<<"stuff after nullptr: "<<stuff<<"\n";
+
+
+    }
+    cout<<x;
+  
  
     return 0;
 }
