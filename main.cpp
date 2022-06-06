@@ -93,17 +93,19 @@ int main(){
      //get mmstock items as a list
     list<MMStock> mmstockList = frw::mmStockBuilder();
 
-    // list<BaseStock> adaptedItemList;
+    list<BaseStock*> adaptedItemList;
 
-   
-    // for (auto& mmstockItem: mmstockList){
-    //     Adapter *a = new Adapter(mmstockItem);
-    //     // adaptedItemList.push_back(*a);
-    // }
+    
+    for (auto& mmstockItem: mmstockList){
+        Adapter *a = new Adapter(mmstockItem);
+        BaseStock* b;
+        b = a;
+        adaptedItemList.push_back(b);
+    }
 
-    // for (auto& item: adaptedItemList){
-    //     cout<<item.getProductDescription()<<endl;
-    // }
+    for (auto& item: adaptedItemList){
+        cout<<item->getProductDescription()<<endl;
+    }
 
     
 

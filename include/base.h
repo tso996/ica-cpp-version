@@ -20,6 +20,5 @@ class BaseStock{
         virtual string getProductDescription(){};
         virtual int getUnitPrice(){};
         virtual int getQuantity(){};
-
 };
 #endif
