@@ -87,6 +87,7 @@ list<MMStock> mmStockBuilder(){
 }
 
 int main(){
+    char option = 'n';
 
     //get bbstock items as a list
     list<BBStock> bbstockList = frw::bbStockBuilder();
@@ -109,14 +110,50 @@ int main(){
     }
 
     cout<<endl;
-    cout<<"=======================Stock Catalogue===================\n";
-    for (auto& item: adaptedItemList){        
-        cout<<"code: "<<item->getProductCode()<<"\nproduct title: "<<item->getProductTitle()<<"\nproduct description: "<<item->getProductDescription()<<"\nprice: "<<item->getUnitPrice()<<"\nquantity: "<<item->getQuantity()<<"\n";
-        cout<<"====================================================\n";
-    
+    while(true){
+        system("clear");
+        cout<<"=======================Stock Catalogue===================\n";
+        for (auto& item: adaptedItemList){        
+            cout<<"code: "<<item->getProductCode()<<"\nproduct title: "<<item->getProductTitle()<<"\nproduct description: "<<item->getProductDescription()<<"\nprice: "<<item->getUnitPrice()<<"\nquantity: "<<item->getQuantity()<<"\n";
+            cout<<"====================================================\n";
+        
+        }
+        cout<<"What would you like to do?"<<"\n";
+        cout<<"[s]ell an item\n"<<"[a]dd an item\n"<<"[q]uit\n";
+        cin>>option;
+        if(option == 'q'){
+            cout<<"Quitting...\n";
+            return 0;
+        }
+        else if(option == 's')
+        {   
+            string id = "k";
+            cout<<"[e]nter id of the item to sell: \n";
+            cin>>id;
+            for (auto& item: adaptedItemList){
+                if(item->getProductCode() == id){
+                    cout<<"[e]nter quantity to sell: \n";
+                    string q;
+                    cin>>q;
+                    item->sellQuantity(stoi(q));
+                    break;
+                }
+            }
+        }else if(option == 'a'){
+             string id = "k";
+            cout<<"[e]nter id of the item to add: \n";
+            cin>>id;
+            for (auto& item: adaptedItemList){
+                if(item->getProductCode() == id){
+                    cout<<"[e]nter quantity to add: \n";
+                    string q;
+                    cin>>q;
+                    item->buyQuantity(stoi(q));
+                    break;
+                }
+            }
+        }
     }
- 
- 
     return 0;
 }
 

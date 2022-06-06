@@ -16,7 +16,6 @@ class BBStock: public BaseStock{
         int quantity;
     
     public:
-        BBStock():productCode(" "),productTitle(" "),productDescription(" "),unitPrice(0), quantity(0){};
         BBStock(string, string, string, int, int);
         ~BBStock() = default;
         string getProductCode();
@@ -24,6 +23,8 @@ class BBStock: public BaseStock{
         string getProductDescription();
         int getUnitPrice();
         int getQuantity();
+        void sellQuantity(int);
+        void buyQuantity(int);
 
 };
 #endif
