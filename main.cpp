@@ -108,48 +108,13 @@ int main(){
         adaptedItemList.push_back(b);
     }
 
-        cout<<"====================================================\n";
-
+    cout<<endl;
+    cout<<"=======================Stock Catalogue===================\n";
     for (auto& item: adaptedItemList){        
         cout<<"code: "<<item->getProductCode()<<"\nproduct title: "<<item->getProductTitle()<<"\nproduct description: "<<item->getProductDescription()<<"\nprice: "<<item->getUnitPrice()<<"\nquantity: "<<item->getQuantity()<<"\n";
         cout<<"====================================================\n";
     
     }
-
-    
-
-
-
-    
-    // list<BBStock>::iterator itB;
-    // cout<<"bbstock items\n";
-    // cout<<"====================================================\n";
-
-    // for(itB=bbstockList.begin();itB!=bbstockList.end();++itB){
-    //     cout<<"code: "<<itB->getProductCode()<<"\nproduct title: "<<itB->getProductTitle()<<"\nproduct description: "<<itB->getProductDescription()<<"\nprice: "<<itB->getUnitPrice()<<"\nquantity: "<<itB->getQuantity()<<"\n";
-    //     cout<<"====================================================\n";
-    // }
-    // return 0;
-    // // for(auto& item: bbstockList){
-    // //     cout<<item.getProductDescription()<<"\n";
-    // // }
-
-    // //get mmstock as a list
-    // list<MMStock> mmstockList = frw::mmStockBuilder();
-    // list<MMStock>::iterator itM;
-    // for(itM=mmstockList.begin();itM!=mmstockList.end();++itM){
-    //     cout<<itM->getCode()<<"\n";
-    // }
-
-    // for(auto& item: mmstockList){
-    //     cout<<item.getDepartmentId()<<"\n";
-    // }
-
-    //get bbstock as a list
-    //auto mmstockList = frw::mmStockBuilder();
-    std::cout<<"its loaded!!\n";
-
-   // BBStock *item = new BBStock("1","2","3",4, 5);
  
  
     return 0;
