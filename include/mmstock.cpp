@@ -19,9 +19,15 @@ std::string MMStock::getCode(){
     return code;
 }
 
-std::string MMStock::getNameAndDescription(){
-    return nameAndDescription;
-}
+std::string MMStock::getName() {
+        return nameAndDescription.substr(0, 50);
+    }
+    
+    
+std::string MMStock::getDescription() {
+        return nameAndDescription.substr(49);
+    }
+
 
 int MMStock::getUnitPricePounds(){
     return unitPricePounds;

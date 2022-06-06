@@ -1,9 +1,13 @@
+#ifndef _BBSTOCKS_
+#define _BBSTOCKS_
+
 #include<iostream>
 #include<string.h>
+#include "base.h"
 
 using namespace std;
 
-class BBStock{
+class BBStock: public BaseStock{
     private:
         string productCode;
         string productTitle;
@@ -12,6 +16,7 @@ class BBStock{
         int quantity;
     
     public:
+        BBStock():productCode(" "),productTitle(" "),productDescription(" "),unitPrice(0), quantity(0){};
         BBStock(string, string, string, int, int);
         ~BBStock() = default;
         string getProductCode();
@@ -21,3 +26,4 @@ class BBStock{
         int getQuantity();
 
 };
+#endif

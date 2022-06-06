@@ -11,6 +11,6 @@ add_executable(${PROJECT_NAME} main.cpp)
 
 add_subdirectory(include)
 
-target_link_libraries(${PROJECT_NAME} bbstock mmstock)
+target_link_libraries(${PROJECT_NAME} bbstock mmstock adapter basestock)
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)

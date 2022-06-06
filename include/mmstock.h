@@ -1,3 +1,6 @@
+#ifndef MMSTOCKS
+#define MMSTOCKS
+
 #include <iostream>
 #include <string>
 
@@ -18,9 +21,11 @@ class MMStock
 
         int getDepartmentId();
         std::string getCode();
-        std::string getNameAndDescription();
+        std::string getName();
+        std::string getDescription();
         int getUnitPricePounds();
         int getUnitPricePence();
         int getQuantityInStock();
 
 };
+#endif

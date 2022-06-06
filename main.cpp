@@ -4,6 +4,7 @@
 //3 - make it so that we can modify a new csv file with the data through the terminal
 #include "include/mmstock.h"//'' and "" are different
 #include "include/bbstock.h"
+#include "include/adapter.h"
 #include <vector>
 #include <list>
 #include <fstream>
@@ -51,7 +52,35 @@ list<BBStock> bbStockBuilder(){
 }
 
 list<MMStock> mmStockBuilder(){
-
+    std::ifstream file("data/mead_modernity_stock_list_example.csv");
+    list<MMStock> mmstockItems;
+    if (file.is_open()) {       
+        std::string line;
+        while (std::getline(file, line)) {
+            string values[6];
+            int i = 0;
+            std::istringstream ss(line.c_str());
+            std::string token;
+            while(std::getline(ss, token, ',')) {
+                //std::cout << token << endl;
+                if(i<6){
+                    values[i] = token;
+                    i++;
+                }
+                else
+                {
+                    cout<<"array out of bounds";
+                }
+            }
+            //cout<<values[0]<<"\n";
+            MMStock *item = new MMStock(stoi(values[0]),values[1],values[2],stoi(values[3]),stoi(values[4]),stoi(values[5]));
+            mmstockItems.push_back(*item);
+            delete item;
+            item = nullptr;
+        }
+        file.close();
+    }
+    return mmstockItems;
 
 }
 
@@ -59,16 +88,51 @@ list<MMStock> mmStockBuilder(){
 
 int main(){
 
-    //get mmstock as a list
+    //get bbstock items as a list
     list<BBStock> bbstockList = frw::bbStockBuilder();
-    list<BBStock>::iterator it;
-    for(it=bbstockList.begin();it!=bbstockList.end();++it){
-        cout<<it->getProductCode()<<"\n";
-    }
+     //get mmstock items as a list
+    list<MMStock> mmstockList = frw::mmStockBuilder();
 
-    for(auto& item: bbstockList){
-        cout<<item.getProductDescription()<<"\n";
-    }
+    // list<BaseStock> adaptedItemList;
+
+   
+    // for (auto& mmstockItem: mmstockList){
+    //     Adapter *a = new Adapter(mmstockItem);
+    //     // adaptedItemList.push_back(*a);
+    // }
+
+    // for (auto& item: adaptedItemList){
+    //     cout<<item.getProductDescription()<<endl;
+    // }
+
+    
+
+
+
+    
+    // list<BBStock>::iterator itB;
+    // cout<<"bbstock items\n";
+    // cout<<"====================================================\n";
+
+    // for(itB=bbstockList.begin();itB!=bbstockList.end();++itB){
+    //     cout<<"code: "<<itB->getProductCode()<<"\nproduct title: "<<itB->getProductTitle()<<"\nproduct description: "<<itB->getProductDescription()<<"\nprice: "<<itB->getUnitPrice()<<"\nquantity: "<<itB->getQuantity()<<"\n";
+    //     cout<<"====================================================\n";
+    // }
+    // return 0;
+    // // for(auto& item: bbstockList){
+    // //     cout<<item.getProductDescription()<<"\n";
+    // // }
+
+    // //get mmstock as a list
+    // list<MMStock> mmstockList = frw::mmStockBuilder();
+    // list<MMStock>::iterator itM;
+    // for(itM=mmstockList.begin();itM!=mmstockList.end();++itM){
+    //     cout<<itM->getCode()<<"\n";
+    // }
+
+    // for(auto& item: mmstockList){
+    //     cout<<item.getDepartmentId()<<"\n";
+    // }
 
     //get bbstock as a list
     //auto mmstockList = frw::mmStockBuilder();
