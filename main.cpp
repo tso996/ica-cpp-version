@@ -141,11 +141,11 @@ int main(){
             }
         }else if(option == 'a'){
              string id = "k";
-            cout<<"[e]nter id of the item to add: \n";
+            cout<<"[e]nter id of the item to buy: \n";
             cin>>id;
             for (auto& item: adaptedItemList){
                 if(item->getProductCode() == id){
-                    cout<<"[e]nter quantity to add: \n";
+                    cout<<"[e]nter quantity to buy: \n";
                     string q;
                     cin>>q;
                     item->buyQuantity(stoi(q));
