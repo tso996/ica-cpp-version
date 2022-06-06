@@ -95,6 +95,11 @@ int main(){
 
     list<BaseStock*> adaptedItemList;
 
+    for(auto& item: bbstockList){
+        BaseStock* x;
+        x = &item;
+        adaptedItemList.push_back(x);
+    }
     
     for (auto& mmstockItem: mmstockList){
         Adapter *a = new Adapter(mmstockItem);
@@ -103,8 +108,12 @@ int main(){
         adaptedItemList.push_back(b);
     }
 
-    for (auto& item: adaptedItemList){
-        cout<<item->getProductDescription()<<endl;
+        cout<<"====================================================\n";
+
+    for (auto& item: adaptedItemList){        
+        cout<<"code: "<<item->getProductCode()<<"\nproduct title: "<<item->getProductTitle()<<"\nproduct description: "<<item->getProductDescription()<<"\nprice: "<<item->getUnitPrice()<<"\nquantity: "<<item->getQuantity()<<"\n";
+        cout<<"====================================================\n";
+    
     }
 
     

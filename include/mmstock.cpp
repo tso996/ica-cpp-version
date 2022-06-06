@@ -20,7 +20,7 @@ std::string MMStock::getCode(){
 }
 
 std::string MMStock::getName() {
-        return nameAndDescription.substr(0, 50);
+        return nameAndDescription.substr(0, 49);
     }
     
     
