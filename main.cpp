@@ -1,7 +1,9 @@
 //Objectives########
-//1 - make class for each of the 2 stock categories from the dataset
-//2 - make a class to read information from the dataset 
-//3 - make it so that we can modify a new csv file with the data through the terminal
+/*
+- Read data from the csv files
+- Make an adapter class to "adapt" the data from the MMStock to BBstock
+- Make a user interface through the command line
+*/
 #include "include/mmstock.h"//'' and "" are different
 #include "include/bbstock.h"
 #include "include/adapter.h"
@@ -102,10 +104,8 @@ int main(){
         adaptedItemList.push_back(x);
     }
     
-    for (auto& mmstockItem: mmstockList){
-        Adapter *a = new Adapter(mmstockItem);
-        BaseStock* b;
-        b = a;
+    for (auto& mmstockItem: mmstockList){   
+        BaseStock* b = new Adapter(mmstockItem);
         adaptedItemList.push_back(b);
     }
 
@@ -115,9 +115,9 @@ int main(){
         cout<<"=======================Stock Catalogue===================\n";
         for (auto& item: adaptedItemList){        
             cout<<"code: "<<item->getProductCode()<<"\nproduct title: "<<item->getProductTitle()<<"\nproduct description: "<<item->getProductDescription()<<"\nprice: "<<item->getUnitPrice()<<"\nquantity: "<<item->getQuantity()<<"\n";
-            cout<<"====================================================\n";
-        
+            cout<<"====================================================\n";       
         }
+
         cout<<"What would you like to do?"<<"\n";
         cout<<"[s]ell an item\n"<<"[a]dd an item\n"<<"[q]uit\n";
         cin>>option;
@@ -141,7 +141,7 @@ int main(){
             }
         }else if(option == 'a'){
              string id = "k";
-            cout<<"[e]nter id of the item to buy: \n";
+            cout<<"[e]nter id/code of the item to buy: \n";
             cin>>id;
             for (auto& item: adaptedItemList){
                 if(item->getProductCode() == id){
