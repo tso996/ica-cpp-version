@@ -3,6 +3,10 @@
 - Read data from the csv files
 - Make an adapter class to "adapt" the data from the MMStock to BBstock
 - Make a user interface through the command line
+
+To Run on terminal: 
+    source build.sh
+    source run.sh
 */
 #include "include/mmstock.h"//'' and "" are different
 #include "include/bbstock.h"
