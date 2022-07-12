@@ -26,6 +26,8 @@ class MMStock
         int getUnitPricePounds();
         int getUnitPricePence();
         int getQuantityInStock();
+        void sellQuantityInStock(int);
+        void addQuantityToStock(int);
 
 };
 #endif

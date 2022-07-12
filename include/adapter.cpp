@@ -24,3 +24,11 @@ int Adapter::getUnitPrice(){
     int pricePounds = a + (int)c;
     return pricePounds;
 }
+
+void Adapter::sellQuantity(int q){
+        instance.sellQuantityInStock(q);
+}
+
+void Adapter::buyQuantity(int b){
+        instance.addQuantityToStock(b);
+}

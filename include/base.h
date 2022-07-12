@@ -15,6 +15,7 @@ class BaseStock{
         int quantity;
     
     public:
+        virtual ~BaseStock(){};
         virtual string getProductCode(){};
         virtual string getProductTitle(){};
         virtual string getProductDescription(){};

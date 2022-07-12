@@ -40,3 +40,11 @@ int MMStock::getUnitPricePence(){
 int MMStock::getQuantityInStock(){
     return quantityInStock;
 }
+
+void MMStock::sellQuantityInStock(int s){
+     if(s<quantityInStock)
+        quantityInStock = quantityInStock - s;
+}
+void MMStock::addQuantityToStock(int a){
+    quantityInStock+=a;
+}

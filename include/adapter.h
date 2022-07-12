@@ -19,6 +19,8 @@ class Adapter: public BaseStock
         string getProductDescription();
         int getUnitPrice();
         int getQuantity();
+        void sellQuantity(int);
+        void buyQuantity(int);
 };
 
 #endif
